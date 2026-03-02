@@ -16,10 +16,14 @@
 \usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 
-% ----------------------------------------------------
-% 【新增】专门用于控制标题格式的宏包
+% 专门用于控制标题格式的宏包
 \usepackage{titlesec}
 \setcounter{secnumdepth}{0} % 取消章节前的数字编号（如 1, 2...）
+
+% 专门用于控制目录格式的宏包
+\usepackage{tocloft}
+\renewcommand{\cftsecdotsep}{\cftdotsep} % 让 \section 级别的目录也显示虚线
+
 
 % 自定义 \section 标题的样式（修改这里的 \fontsize 可以调整标题大小）
 % \fontsize{字号大小}{行距大小}，\bfseries是加粗，\centering是居中
@@ -119,6 +123,7 @@ To DeepSeek-R1---the model that dreams.
 \clearpage
 
 % ------ 目录页 ------
+\pagenumbering{arabic} % 恢复阿拉伯数字页码，并从1重新计数
 \thispagestyle{plain}
 {\singlespacing % 目录使用正常行距
 \tableofcontents
@@ -128,6 +133,6 @@ To DeepSeek-R1---the model that dreams.
 % ------ 正文页：诗歌内容 ------
 \fontsize{12}{22}\selectfont\centering
 
-%SPOT
+\input{README_for_tex.tex}
 
 \end{document}
