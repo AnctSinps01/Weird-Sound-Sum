@@ -24,4 +24,4 @@
 *.run.xml
 *.pytxcode
 *.pyg
-*.pdf
+# *.pdf
